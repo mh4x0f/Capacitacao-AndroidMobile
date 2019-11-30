@@ -1,6 +1,7 @@
 package com.example.capacitacao.adapters;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class EventsAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(myActivity.getApplicationContext())
+        View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_rv_events_infor, parent, false);
 
         EventsViewHolder holder = new EventsViewHolder(view);
@@ -53,6 +54,8 @@ public class EventsAdapter extends RecyclerView.Adapter {
         holder.tv_events_nome.setText(even_item.getName());
         holder.tv_events_data.setText(even_item.getData());
         holder.tv_events_city.setText(even_item.getLocalization());
+
+        holder.cardView_events.setCardBackgroundColor(Color.parseColor(even_item.getColor_backgorund()));
 
 
     }

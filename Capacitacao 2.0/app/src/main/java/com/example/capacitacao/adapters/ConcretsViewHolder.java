@@ -20,17 +20,11 @@ import com.example.capacitacao.R;
 
 public class ConcretsViewHolder extends RecyclerView.ViewHolder {
 
-    final TextView tv_concrets_nome;
-    final TextView tv_concrets_url;
-    final TextView tv_concrets_author;
     final ImageView image_concrets;
 
 
     public ConcretsViewHolder(@NonNull View itemView) {
         super(itemView);
-        tv_concrets_nome = (TextView) itemView.findViewById(R.id.tv_concrets_name);
-        tv_concrets_url = (TextView) itemView.findViewById(R.id.tv_concrets_url);
-        tv_concrets_author = (TextView) itemView.findViewById(R.id.tv_concrets_author);
         image_concrets = (ImageView) itemView.findViewById(R.id.image_concrets);
     }
 }

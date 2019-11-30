@@ -5,9 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.capacitacao.adapters.ConcretsAdapter;
 import com.example.capacitacao.adapters.EventsAdapter;
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -45,51 +50,54 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerViewEvents = (RecyclerView) findViewById(R.id.rv_events);
         mRecyclerViewConcrets = (RecyclerView) findViewById(R.id.rv_concrets);
 
+
         mEventsAdapter = new EventsAdapter(getAllEvents(),this);
         mRecyclerViewEvents.setAdapter(mEventsAdapter);
         manager_events = new LinearLayoutManager(this);
         mRecyclerViewEvents.setLayoutManager(manager_events);
+        manager_events.setOrientation(LinearLayout.HORIZONTAL);
 
 
         mConcretsAdapter = new ConcretsAdapter(getAllConcrets(),this);
         mRecyclerViewConcrets.setAdapter(mConcretsAdapter);
         manager_concrets = new LinearLayoutManager(this);
         mRecyclerViewConcrets.setLayoutManager(manager_concrets);
+        manager_concrets.setOrientation(LinearLayout.HORIZONTAL);
 
 
-//        spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
-//        spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
-//        spaceNavigationView.addSpaceItem(new SpaceItem("HOME", R.drawable.ic_account_balance_wallet_black_24dp));
-//        spaceNavigationView.addSpaceItem(new SpaceItem("SEARCH", R.drawable.ic_archive_black_24dp));
-//        spaceNavigationView.shouldShowFullBadgeText(true);
-//        spaceNavigationView.setCentreButtonIconColorFilterEnabled(false);
-//
-//        spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
-//            @Override
-//            public void onCentreButtonClick() {
-//                Log.d("onCentreButtonClick ", "onCentreButtonClick");
-//                spaceNavigationView.shouldShowFullBadgeText(true);
-//            }
-//
-//            @Override
-//            public void onItemClick(int itemIndex, String itemName) {
-//                Log.d("onItemClick ", "" + itemIndex + " " + itemName);
-//            }
-//
-//            @Override
-//            public void onItemReselected(int itemIndex, String itemName) {
-//                Log.d("onItemReselected ", "" + itemIndex + " " + itemName);
-//            }
-//        });
+        spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space_navigation);
+        spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_account_balance_wallet_black_24dp));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_archive_black_24dp));
+        spaceNavigationView.shouldShowFullBadgeText(true);
+        spaceNavigationView.setCentreButtonIconColorFilterEnabled(false);
+
+        spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
+            @Override
+            public void onCentreButtonClick() {
+                Log.d("onCentreButtonClick ", "onCentreButtonClick");
+                spaceNavigationView.shouldShowFullBadgeText(true);
+            }
+
+            @Override
+            public void onItemClick(int itemIndex, String itemName) {
+                Log.d("onItemClick ", "" + itemIndex + " " + itemName);
+            }
+
+            @Override
+            public void onItemReselected(int itemIndex, String itemName) {
+                Log.d("onItemReselected ", "" + itemIndex + " " + itemName);
+            }
+        });
 
 
     }
 
     public List<Events> getAllEvents(){
         ArrayList<Events> models =  new ArrayList<Events>();
-        models.add(new Events("Taylor Swift 1", "Wen 21, Agus", "Club Devil, 5th, Aveunce 287"));
-        models.add(new Events("Taylor Swift 2", "Wen 22, Agus", "Club Devil, 6th, Aveunce 288"));
-        models.add(new Events("Taylor Swift 3", "Wen 23, Agus", "Club Devil, 7th, Aveunce 289"));
+        models.add(new Events("Taylor Swift 1", "Wen 21, Agus", "Club Devil, 5th, Aveunce 287","#ffdd7c"));
+        models.add(new Events("Taylor Swift 2", "Wen 22, Agus", "Club Devil, 6th, Aveunce 288", "#BAF0DF"));
+        models.add(new Events("Taylor Swift 3", "Wen 23, Agus", "Club Devil, 7th, Aveunce 289", "#F78EB6"));
         return models;
     }
 

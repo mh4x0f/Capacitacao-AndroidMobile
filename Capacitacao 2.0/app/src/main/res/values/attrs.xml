@@ -2,25 +2,11 @@
 <resources>
     <declare-styleable name="ds">
         <attr name="backgroundcolor" format="color"></attr>
-        <attr name="cardbackground" format="color"></attr>
-        <attr name="background_fragment" format="color"></attr>
-        <attr name="textcolor" format="color"></attr>
-        <attr name="tintcolor" format="color"></attr>
-        <attr name="buttoncolor" format="color"></attr>
-        <attr name="spinnercolor" format="color"></attr>
-        <attr name="texttitlecolor" format="color"></attr>
-        <attr name="textsubtitlecolor" format="color"></attr>
-        <attr name="color_icon_home" format="color"></attr>
-        <attr name="color_bg_round" format="color"></attr>
-        <attr name="icons_searchcolor" format="color"></attr>
-        <attr name="icon_floatbuttoncolor" format="color"></attr>
-        <attr name="searchviewcolor" format="color"></attr>
-        <attr name="divider_item_color" format="color"></attr>
-        <attr name="class_number_color" format="color"></attr>
-        <attr name="class_text_color" format="color"></attr>
-        <attr name="button_up_color" format="color"></attr>
-        <attr name="dialog_close_button_color" format="color"></attr>
-        <attr name="item_disciplineTitle" format="color"></attr>
+        <attr name="textotituloevento" format="color"></attr>
+        <attr name="textodataevento" format="color"></attr>
+        <attr name="textocityevento" format="color"></attr>
+        <attr name="colorWhiteItens" format="color"></attr>
+        <attr name="colorWhiteItens_active" format="color"></attr>
 
     </declare-styleable>
 

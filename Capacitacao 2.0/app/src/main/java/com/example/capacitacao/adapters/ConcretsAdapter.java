@@ -59,9 +59,9 @@ public class ConcretsAdapter extends RecyclerView.Adapter {
 
         final Concrets con_item  = concerts.get(position) ;
 
-        holder.tv_concrets_nome.setText(con_item.getName());
-        holder.tv_concrets_url.setText(con_item.getImage_url());
-        holder.tv_concrets_author.setText(con_item.getAuthor());
+//        holder.tv_concrets_nome.setText(con_item.getName());
+//        //holder.tv_concrets_url.setText(con_item.getImage_url());
+//        holder.tv_concrets_author.setText(con_item.getAuthor());
 
 
         RequestOptions options = new RequestOptions()
